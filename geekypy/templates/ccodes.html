@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %} Home
+{% endblock title %}
+{% block extra_style %}
+#faq #faq-list a.collapsed i::before {
+    content: "\f067" !important;
+}
+{% endblock extra_style %}
+{% block project_link %}/
+{% endblock project_link %}
+{% block about_us_link %}/
+{% endblock about_us_link %}
+{% block body %}
+    <section id="faq">
+      <div class="container">
+        <header class="section-header">
+          <h3>Frequently Asked Questions</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </header>
+
+         {% for Ccodes in page_obj %}
+        <ul id="faq-list" class="wow fadeInUp">
+
+          <li>
+            <a data-toggle="collapse" href="#faq6" class="collapsed">{{Ccodes.title}} <i class="fa fa-minus"></i></a>
+            <div id="faq6" class="collapse" data-parent="#faq-list">
+              <pre>
+                <code class="language-python"> 
+                  {{Ccodes.code}}
+
+                </code>
+              </pre>
+            </div>
+          </li>
+
+        </ul>
+          {% endfor %}
+
+      </div>
+    </section>
+
+<!-- for giving space b/w pagination and code section -->
+<div style="height: 50px;"></div>
+
+
+{% endblock body %}

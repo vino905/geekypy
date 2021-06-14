@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %}CHE..-3
+{% endblock title %}
+{% block project_link %}/
+{% endblock project_link %}
+{% block about_us_link %}/
+{% endblock about_us_link %}
+{% block body %}
+
+<div style="height: 100px;"></div>
+
+
+    <!--==========================
+      computer science papers
+    ============================-->
+    
+    <!-- #faq -->
+    <section id="faq">
+      <div class="container">
+        <header class="section-header">
+          <h3>Chemical Engineering</h3>
+          
+        </header>
+
+           <ul id="faq-list" class="wow fadeInUp">
+ 
+        
+{% for Che3Paper in page_obj%}
+          
+          <div class="list-group bg-dark">
+  <a href="{{Che3Paper.fileupload.url}}" download  class="list-group-item list-group-item-action active bg-dark  " >
+   &nbsp;  &nbsp;{{Che3Paper.subject}}
+  <i class="fa fa-download mr-4"></i>
+  </a>
+  
+  
+</div>
+        {% endfor %}
+
+          
+            
+          
+
+      
+
+
+        </ul>
+        </div>
+    </section>
+    <!-- #faq -->
+
+  </main>
+<!-- for giving space -->
+      
+       
+      <!-- pagination -->
+ 
+<div class="pagination justify-content-center">
+
+      <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous%}
+        <li class="page-item"><a class="page-link bg-transparent" href="?page={{page_obj.previous_page_number}}">Previous</a></li>
+        {% endif %}
+        {% if page_obj.has_next%}
+        <li class="page-item"><a class="page-link bg-transparent" href="?page={{page_obj.next_page_number}}">Next</a></li>
+        {% endif %}
+      </ul>
+      
+</div>
+    
+    
+    
+  
+{% endblock body %}

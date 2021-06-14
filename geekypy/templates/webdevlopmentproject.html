@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %}Webdevlopment Projects
+{% endblock title %}
+{% block project_link %}/
+{% endblock project_link %}
+{% block about_us_link %}/
+{% endblock about_us_link %}
+{% block body %}
+
+<div class="searchbox">
+
+
+ <form action="/search" method="get">
+<input type="search" class="query" id="query" name="query" placeholder="search...">
+<button type="submit" id="btnn">
+<i class="fa fa-search"></i>
+
+</button>
+
+</form> 
+</div>
+
+
+
+      
+      
+
+
+      <h1 style="text-align: center; margin-top: 220px;
+      margin-bottom: 50px;">Webdevlopment Projects</h1>
+
+     
+
+   
+       
+
+
+
+<div class="row text-center">
+
+{% for Webdevlopment in page_obj%}
+  <div class="col-md-3 col-sm-6 ">
+      <div class="card card-block bg-dark ">
+          <h3 class="card-title mt-3 mb-3 text-center">{{Webdevlopment.Title}}</h3>
+          <p class="card-text text-center">{{Webdevlopment.Text}}</p> 
+          <a href="{{Webdevlopment.file_upload.url}}" download class="btn btn-primary">Download</a>
+    </div>
+  </div>
+   {% endfor %} 
+  
+</div>
+
+      
+
+    
+      
+<!-- for giving space -->
+      <div style="height: 50px;"></div>
+       
+      <!-- pagination -->
+    {% if  is_paginated  %}
+      <!-- pagination -->
+    
+      <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous%}
+        <li class="page-item"><a class="page-link bg-transparent" href="?page={{page_obj.previous_page_number}}">Previous</a></li>
+        {% endif %}
+        {% if page_obj.has_next%}
+        <li class="page-item"><a class="page-link bg-transparent" href="?page={{page_obj.next_page_number}}">Next</a></li>
+        {% endif %}
+      </ul>
+      {% endif %}
+ 
+{% endblock body %}           

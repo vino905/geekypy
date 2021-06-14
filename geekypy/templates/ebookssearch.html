@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+     <!-- Favicons -->
+  <link href="../static/img/favicon.png" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="../static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="../static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="../static/css/style.css" rel="stylesheet">
+  
+
+  
+    <title>Python Projects</title>
+
+    
+<style>
+  
+
+div [class^="col-md-3"]{
+  /* padding-left:5px;
+  padding-right:10px;
+  padding-bottom: 10px; */
+
+  padding:20px;
+  
+}
+.card{
+  transition:0.5s;
+  cursor:pointer;
+}
+.card-title{  
+  font-size:20px;
+  transition:1s;
+  cursor:pointer;
+  color: #1bb1dc;
+  font-weight: bold;
+}
+.card-title i{  
+  font-size:15px;
+  transition:1s;
+  cursor:pointer;
+  color:#ffa710
+}
+.card-title i:hover{
+  transform: scale(1.25) rotate(100deg); 
+  color:#18d4ca;
+  
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+}
+.card-text{
+  height:80px;  
+}
+
+.card::before, .card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform .3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: '';
+  pointer-events: none;
+}
+.card::before {
+  transform-origin: left top;
+}
+.card::after {
+  transform-origin: right bottom;
+}
+.card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+  transform: scale3d(1, 1, 1);
+}
+
+
+{% comment %} sear bar {% endcomment %}
+
+.searchBox {
+    position: absolute;
+    top: 18%;
+    {% comment %} left: 10%; {% endcomment %}
+    right:3%;
+    transform:  translate(10%,-10%);
+    background: #2f3640;
+    {% comment %} height: 40px; {% endcomment %}
+    border-radius: 50px;
+    padding: 7px;
+
+}
+
+.searchBox:hover > .searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+  background: white;
+  color : #2f3640;
+}
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+.searchButton:{
+  color:red;
+}
+.searchButton:focus{
+  outline:none;
+}
+@media screen and (max-width: 620px) {
+.searchBox:hover > .searchInput {
+    width: 150px;
+    padding: 0 6px;
+}
+}
+
+{% comment %} searh bar responsiveness {% endcomment %}
+
+@media only screen and (min-width: 900px) and (max-width:1500px) {
+            .searchBox {
+              top: 25%;
+            
+            
+            
+
+            }
+        }   
+@media only screen and (min-width: 200px) and (max-width:500px) {
+            .searchButton {
+              
+             width: 30px;
+             height: 30px;
+             {% comment %} line-height: 20px; {% endcomment %}
+            
+            
+
+            }
+        }   
+@media only screen and (min-width: 200px) and (max-width:500px) {
+            .searchInput {
+              
+             {% comment %} width: 30px;
+             height: 30px; {% endcomment %}
+             line-height: 20px;
+            
+            
+
+            }
+        }   
+  .searchbox{
+
+    top: 20%;
+    position: absolute;
+    right:0.2%;
+    overflow:none;
+  }       
+  .query{
+  border-radius: 15px;
+ background:#343a40;
+width:200px;
+     height:40px;
+     {% comment %} margin-right:3px; {% endcomment %}
+    
+  } 
+  #btnn{
+     border-radius: 10px;
+     color:#1bb1dc;
+     background:black;
+     width:40px;
+     height:40px;
+     
+     
+  }     
+#btnn:focus{
+    outline:none;
+   
+  }    
+  .query:focus{
+    outline:none;
+  }     
+html, body {width: auto!important; overflow-x: hidden!important} 
+
+
+
+
+</style>
+    
+  </head>
+  
+  <body>
+      <!--==========================
+  Header
+  ============================-->
+  <header id="header" class="bg-dark">
+
+    <div id="topbar">
+      <div class="container">
+        <div class="social-links">
+          <a href="#" class="facebook"><i class="fa fa-github"></i></a>
+          <a href="#" class="facebook"><i class="fa fa-whatsapp"></i></a>
+          <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+          <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <h1 class="text-light"><a href="#intro" class="scrollto"><span>GeekyPy</span></a></h1>
+        <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/">Projects</a></li>
+          <li class="drop-down"><a href="">Codes</a>
+            <ul>
+              <li><a href="ccodes">C Programmes</a></li>
+              <li ><a href="c1codes">C++ Programmes</a>
+                <!-- <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul> -->
+              </li>
+              <li><a href="pythoncodes">Python Programmes</a></li>
+              <li><a href="javacodes">Java Programmes</a></li>
+              <li><a href="dsacodes">DSA Programmes</a></li>
+            </ul>
+          </li>
+          <li class="drop-down" ><a href="#" >RTU</a>
+                   <ul>
+              <li class="drop-down"><a href="#" >Papers</a>
+                <ul>
+
+                  <li><a href="firstyear">1st Year</a></li>
+                  <li><a href="secondyear">2nd Year</a></li>
+                  <li><a href="thirdyear">3rd Year</a></li>
+                  <li><a href="fourthyear">4th Year</a></li>
+
+                </ul>
+              
+              </li>
+
+              <li ><a href="ebooks">E-Book's</a>    
+              </ul>
+              </li>
+              
+          <li><a href="/">About Us</a></li>
+          <!-- <li><a href="#portfolio">Portfolio</a></li> -->
+          
+          <li><a href="contact">Contact Us</a></li></ul>
+          
+        
+      
+      </nav><!-- .main-nav -->
+    </div>
+  </header><!-- #header -->
+
+           
+
+        
+
+<div style="height: 120px;"></div>
+
+<h1 style="text-align: center; margin: 50px;">E-Book's</h1>
+<div class="container ">
+ 
+    
+      
+
+      <div class="row">
+      {% for ebooks in page_obj %}
+      
+      <div class="col-md-3 col-sm-6  ">
+        <div class="card card-block bg-dark ">
+        
+    
+          <h3 class="card-title mt-3 mb-3 text-center">{{ebooks.title}}</h3>
+  
+          
+          <p class=" text-center">Author: -{{ebooks.author}}</p>
+          
+          <p class="card-text text-center">{{ebooks.subtitle}}</p> 
+          <a href="{{ebooks.book_upload.url}}" class="btn btn-primary" download>Download</a>
+    </div>
+      </div>
+        {% endfor %} 
+      </div>
+      
+      
+
+      
+
+  </div>
+  
+
+
+
+<!-- for giving space -->
+      <div style="height: 50px;"></div>
+       
+      <!-- pagination -->
+    <div class="pagination justify-content-center">
+
+      <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous%}
+        <li class="page-item"><a class="page-link bg-transparent" href="?page={{page_obj.previous_page_number}}">Previous</a></li>
+        {% endif %}
+        {% if page_obj.has_next%}
+        <li class="page-item"><a class="page-link bg-transparent" href="?page={{page_obj.next_page_number}}">Next</a></li>
+        {% endif %}
+      </ul>
+      
+</div>
+      
+    
+  <!--==========================
+    Footer
+  ============================-->
+ <!-- #footer -->
+ <!-- Footer -->
+ <!-- Footer -->
+ <footer class="page-footer font-small unique-color-dark">
+
+  <div style="background: #2d2b46;">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0" >
+          <h5 class="mb-0">Get Connected With Us On Social Networks!</h5>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+             <a href="#" class="facebook mr-4" ><i class="fa fa-github" ></i></a>
+          <a href="#" class="facebook mr-4" ><i class="fa fa-whatsapp" ></i></a>
+          <a href="#" class="linkedin mr-4" ><i class="fa fa-linkedin" ></i></a>
+          <a href="#" class="instagram mr-4" ><i class="fa fa-instagram" ></i></a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h2 class="text-uppercase font-weight-bold"style=" background-image: -webkit-linear-gradient(#1bb1dc, whitesmoke);
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;" >GEEKYPY</h2>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+          consectetur
+          adipisicing elit.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Services</h6>
+        <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; ">
+        <p >
+          <a href="#!" >E-Book's</a>
+        </p>
+        <p>
+          <a href="#!" >RTU Papers</a>
+        </p>
+        <p>
+          <a href="#!" ></a>
+        </p>
+        <p>
+          <a href="#!" >Bootstrap Angular</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!" >Your Account</a>
+        </p>
+        <p> 
+          <a href="#!" >Become an Affiliate</a>
+        </p>
+        <p>
+          <a href="#!" >Shipping Rates</a>
+        </p>
+        <p>
+          <a href="#!" >Help</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold ">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p style="color:#1bb1dc;">
+          <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+        <p style="color:#1bb1dc;">
+          <i class="fa  fa-envelope mr-3"></i> codewithusorg@gmail.com</p>
+        <p style="color:#1bb1dc;">
+          <i class="fa   fa-phone mr-3"></i> + 01 234 567 88</p>
+        <p style="color:#1bb1dc;">
+          <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> geekypy.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+   
+          
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<!-- template JavaScript -->
+    <script src="../static/lib/jquery/jquery.min.js"></script>
+    <script src="../static/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/lib/easing/easing.min.js"></script>
+    <script src="../static/lib/mobile-nav/mobile-nav.js"></script>
+    <script src="../static/lib/wow/wow.min.js"></script>
+    <script src="../static/lib/waypoints/waypoints.min.js"></script>
+    <script src="../static/lib/counterup/counterup.min.js"></script>
+    <script src="../static/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../static/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../static/lib/lightbox/js/lightbox.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="../static/contactform/contactform.js"></script>
+  
+    <!-- Template Main Javascript File -->
+    <script src="../static/js/main.js"></script>
+
+  
+</script>
+  
+  </body>
+</html>
